@@ -1,0 +1,16 @@
+services:
+  db:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: escola
+    volumes:
+      - dades-mysql:/var/lib/mysql
+
+  adminer:
+    image: adminer
+    ports:
+      - "8081:8080"
+
+volumes:
+  dades-mysql:
